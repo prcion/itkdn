@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Itproger.urls'
+ROOT_URLCONF = 'itkdn.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Itproger.wsgi.application'
+WSGI_APPLICATION = 'itkdn.wsgi.application'
 
 
 # Database
