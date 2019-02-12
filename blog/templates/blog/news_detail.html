@@ -1,0 +1,29 @@
+{% extends 'users/main.html' %}
+{% block title %}
+<title>{{title}}</title>
+{% endblock title%}
+{% block main_section %}
+      <div style="float:left;" class="alert alert-light" id="home" >
+        <img class="img" src="{{ object.img.url }}" width= "770px" height="256px"alt="">
+        <div class="continut">
+        <h2>{{ object.title }}</h2>
+        <p class="paragraf_one">{{ object.text }}</p>
+        {% if post.author %}
+          <p><b>Autor:</b> <mark>{{object.author}}</mark></p>
+          {% else %}
+          <p><b>Autor:</b><mark>{{object.author}}</mark></p>
+        {% endif %}
+        <p class="eye" style="float:right;"><img src="https://scontent.fkiv1-1.fna.fbcdn.net/v/t1.15752-9/48971577_344632656315991_424868464251895808_n.png?_nc_cat=100&_nc_ht=scontent.fkiv1-1.fna&oh=1470ba0e0d8dd3bce3f480e76cafb48b&oe=5CD3C9F5" alt=""> {{object.nr}} </p>
+        <span class="text-muted txt_one" style="float:left;"> <img src="https://scontent.fkiv1-1.fna.fbcdn.net/v/t1.15752-9/49277793_295077384545589_3334144298265346048_n.png?_nc_cat=104&_nc_ht=scontent.fkiv1-1.fna&oh=b4a5fea21bc6be67b9542d4d51fb2fe3&oe=5CCCB821" alt=""> {{ object.date|date:"d E Y" }}</span>
+        </div>
+      </div>
+{% endblock main_section%}
+
+{% block aside_news_section %}
+    <h3><b>Article</b></h3>
+    <img src="http://www.itssolution.in/wp-content/uploads/2016/08/run-it-image.jpg" class="img-thumbnail mb-1">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, animi!</p>
+    <a href="#" target="_blank">
+      <button class="btn btn-warning">View</button>
+    </a>
+{% endblock aside_news_section %}

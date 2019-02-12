@@ -1,0 +1,48 @@
+{% extends 'blog/main.html' %}
+
+  {% block head %}
+  <main class= "container">
+    <div class="row">
+      <div class="col-md-8 baram">
+  <h2 class="test1">Articole noi</h2>
+  </div>
+  </div>
+  </main>
+  {% endblock head %}
+{% block main_section %}
+    {% for post in news %}
+      {% if post.post  == -16 %}
+      <div style="float:left;" class="alert alert-light" id="home" >
+        <a href="{% url 'news-detail' post.id %}"><img class="img" src="{{ post.img.url }}" width= "770px" height="120px"alt=""></a>
+        <div class="continut">
+        <a href="{% url 'news-detail' post.id %}"><h2>{{ post.title }}</h2></a>
+        <p class="paragraf_one">{{ post.text }}</p>
+        <div class="row">
+          <div>
+            <img src="{{ post.author.profile.img.url }}" alt="{{post.author}}" class="user_image">
+          </div>
+          <div>
+            {% if post.author %}
+              <p><b>Autor:</b> <mark>{{post.author}}</mark></p>
+              {% else %}
+              <p><b>Autor:</b><mark>{{post.author}}</mark></p>
+            {% endif %}
+            <p class="eye"><img src="https://scontent.fkiv1-1.fna.fbcdn.net/v/t1.15752-9/48971577_344632656315991_424868464251895808_n.png?_nc_cat=100&_nc_ht=scontent.fkiv1-1.fna&oh=1470ba0e0d8dd3bce3f480e76cafb48b&oe=5CD3C9F5" alt=""> {{post.nr}} </p>
+            <span class="text-muted txt_one"> <img src="https://scontent.fkiv1-1.fna.fbcdn.net/v/t1.15752-9/49277793_295077384545589_3334144298265346048_n.png?_nc_cat=104&_nc_ht=scontent.fkiv1-1.fna&oh=b4a5fea21bc6be67b9542d4d51fb2fe3&oe=5CCCB821" alt=""> {{ post.date|date:"d E Y" }}</span>
+
+          </div>
+        </div>
+        </div>
+      </div>
+      {%endif%}
+    {% endfor %}
+{% endblock main_section%}
+
+{% block aside_news_section %}
+      <h3><b>Article</b></h3>
+      <img src="https://images.globes.co.il/images/NewGlobes/big_image_800/2015/tech800.jpg" class="img-thumbnail mb-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, animi!</p>
+      <a href="#" target="_blank">
+      <button class="btn btn-warning">View</button>
+      </a>
+{% endblock aside_news_section %}

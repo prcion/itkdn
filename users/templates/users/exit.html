@@ -1,0 +1,19 @@
+{% extends 'users/main.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>{{title}}</title>
+{% endblock title%}
+{% block main_section %}
+   <div class="form-section">
+     <h2>Ati iesit cu succes!</h2>
+   </div>
+{% endblock main_section%}
+
+{% block aside_news_section %}
+    <h3><b>Article</b></h3>
+    <img src="https://images.globes.co.il/images/NewGlobes/big_image_800/2015/tech800.jpg" class="img-thumbnail mb-1">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, animi!</p>
+    <a href="#" target="_blank">
+      <button class="btn btn-warning">View</button>
+    </a>
+{% endblock aside_news_section %}

@@ -1,0 +1,47 @@
+{% extends 'users/main.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>{{title}}</title>
+{% endblock title%}
+{% block alert %}
+  <div class="alert alert-success">
+    {{ message }}
+  </div>
+{% endblock alert%}
+{% block main_section %}
+   <div class="form-section">
+      <h3>Cabinetul utilizatorului</h3>
+      <div class="media text-muted pt-3">
+          <img class="mr-2 rounded mt-4 img_pro" style="width: 64px; height: 64px;" src="{{ user.profile.img.url }}">
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark" style="font-size:2em;">@{{ user.username }}</strong>
+            {% if user.first_name %}
+            <b style="font-size:1.5em;">Nume: {{user.first_name}}</b><br>
+            {%else%}
+            <b style="font-size:1.5em;">Nume: -</b><br>
+            {%endif%}
+            {% if user.first_name %}
+            <b style="font-size:1.5em;">Prenume: {{user.last_name}}</b><br>
+            {%else%}
+            <b style="font-size:1.5em;">Prenume: -</b><br>
+            {%endif%}
+            <b style="font-size:1.5em;">E-mail: {{user.email}}</b>
+          </p>
+      </div>
+      <h2 class="mt-4">Modifica datele</h2>
+      <form method="POST" enctype="multipart/form-data">  {% csrf_token %}
+        {{ update_user|crispy }}
+        {{ img_profile|crispy }}
+        <button type="submit" class="btn btn-outline-warning">Modifică</button>
+      </form>
+   </div>
+{% endblock main_section%}
+
+{% block aside_news_section %}
+    <h3><b>Article</b></h3>
+    <img src="https://images.globes.co.il/images/NewGlobes/big_image_800/2015/tech800.jpg" class="img-thumbnail mb-1">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, animi!</p>
+    <a href="#" target="_blank">
+      <button class="btn btn-warning">View</button>
+    </a>
+{% endblock aside_news_section %}
