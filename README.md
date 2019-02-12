@@ -1,2 +1,2 @@
 # itkdn
-S website in framework django
+A website in framework django
