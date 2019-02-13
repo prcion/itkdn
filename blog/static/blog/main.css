@@ -6,7 +6,14 @@ body{
 .alert-light{
   border-color: #bfbfbf;
 }
-
+.pass_reset{
+  text-align: right!important;
+  color: red;
+}
+.pass_reset:hover{
+  text-align: right!important;
+  color: black;
+}
 .form-section{
   background: #fff;
   padding: 20px;
