@@ -20,7 +20,9 @@ urlpatterns = [
     path('password_reset_complete/',
          loginViews.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),
          name='password_reset_complete'),
+
     path('exit/', loginViews.LogoutView.as_view(template_name='users/exit.html'), name='exit'),
+
     path('admin/', admin.site.urls),
 ]
 
