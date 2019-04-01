@@ -8,6 +8,7 @@ def home(request):
     n = news[1].nr
     n += 1
     news.update(nr=n)
+
     return render(request, "blog/home.html", {"news": news,
     "title":"Home",
     })
